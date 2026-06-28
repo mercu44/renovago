@@ -1,0 +1,831 @@
+:root{
+    --color-naranja: #d7733d; 
+    --sombra: 0 10px 25px rgba(0,0,0,.1);
+    --color-footer: rgb(229, 229, 229);
+}
+
+
+
+
+/* ==========================================
+   1. RESET Y ESTILOS GLOBALES
+========================================== */
+body{
+    margin:0;
+    font-family: "Poppins", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+h1{
+    font-family: "Merriweather", serif;
+    font-size: 70px;
+}
+h2{
+    font-size: 50px;
+    font-family: "Merriweather", serif;
+}
+
+p{
+    font-size: 18px;
+}
+i{
+    /* color: #444444; en gris*/
+    color: var(--color-naranja);
+    font-weight: 800;
+}
+li{
+    list-style: none;
+}
+
+
+/* ==========================================
+   2. HEADER
+========================================== */
+header{
+    background-image: url("./fotos/cocinas/cocina8.png");
+    background-position: left;
+    min-height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: left;
+    
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255,255,255,0.40);
+
+    clip-path: polygon(
+        0 0,
+        50% 0,
+        45% 100%,
+        0 100%
+    );
+
+    z-index: 1;
+}
+header > *{
+    position: relative;
+    z-index: 2;
+}
+
+#texto-inicio{
+    margin-left: 10%;
+    margin-top: 15%;
+    width: 90%;
+    max-width: 500px;
+}
+
+.img-logo{
+    width: 180px;
+}
+
+#img-inicio{
+    background-size: cover;
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   3. NAVEGACIÓN
+========================================== */
+
+/* Menú principal */
+nav{
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 300;
+    box-shadow:  var(--sombra);
+
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 40px;
+
+}
+
+/* Enlaces */
+nav li a{
+    text-decoration: none;
+    color: inherit;
+    font-size: large;
+    transition: color 0.2s ease;
+
+}
+nav li a:hover{
+    color: var(--color-naranja);
+}
+#contenedor-navegador{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position:fixed;
+    top:0;
+    z-index: 2;
+    width: 80%;
+    left: 10%;
+}
+
+/* Submenú */
+.dropdown{
+    position: relative;
+}
+.submenu{
+    display: none;
+    position:absolute;
+    background-color: white;
+    min-width: 230px;
+    padding: 1px 0px;
+    margin: 0;
+    top: 100%;
+    left: 0;
+
+    box-shadow: var(--sombra);
+}
+.submenu li a{
+    display:block;
+    width: 100%;
+    padding: 12px 20px;
+    color: #333;
+    background: white;
+    text-decoration: none;
+    transition: background .2s;
+}
+.submenu li a:hover{
+    background-color: var(--color-naranja);
+    color:white;
+}
+.dropdown:hover .submenu{
+    display: block;
+}
+.whatsapp{
+    border: 2px solid black;
+    font-size: large;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-naranja);
+    color: white;
+}
+.whatsapp:hover{
+    background-color: #ae5423;
+}
+.bocadillo{
+    display: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: white;
+
+}
+.bocadillo span{
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: 0.2s;
+}
+.bocadillo.active span:nth-child(1){
+    transform: rotate(45deg) translate(6px, 6px)
+}
+.bocadillo.active span:nth-child(2){
+    opacity: 0;
+}
+
+.bocadillo.active span:nth-child(3){
+    transform: rotate(-45deg) translate(6px, -6px)
+}
+.nav-mobil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* ==========================================
+   4. SECCIONES
+========================================== */
+section{
+    padding: 40px;
+    background-color: #fdf9f3;
+}
+article{
+    border: 1px solid #f3ebde;
+    border-radius: 10px;
+    background-color: white;
+    padding: 40px;
+    margin: 10px;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+article:hover{
+    transform:scale(1.01);
+    box-shadow:  0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+/* ==========================================
+   5. FORMULARIOS
+========================================== */
+form{
+    background-color: white;
+    border-radius: 30px;
+    padding:50px;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+form h2{
+    font-size: 30px;
+}
+form label{
+    font-weight: 500;
+}
+form input{
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border:1px solid rgb(255, 230, 203) ;
+    background-color: #fffceb;
+    outline: none;
+}
+form input:focus{
+    border-color: #ae5423;
+    outline: none;
+    box-shadow: 0 0 5px rgba(252, 167, 22, 0.5);
+}
+
+form textarea{
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border:1px solid rgb(255, 230, 203) ;
+    background-color: #fffceb;
+    outline: none;
+    width: 100%;
+    min-width: 150px;
+    max-width: 350px;
+    font-family: "Poppins", serif;
+}
+form button{
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: var(--color-naranja);
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    border-style: none;
+    color: white;
+    cursor:pointer;
+    transition: background-color 0.2 ease;
+}
+form button:hover{
+    background-color: rgb(185, 106, 27) ;
+}
+form p{
+    color: grey;
+    font-size: 12px;
+}
+/* ==========================================
+   6. FOOTER
+========================================== */
+footer{
+    color: var(--color-footer);
+    background-color: rgb(50, 50, 50);
+    
+}
+.footer-container{
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;  
+    padding: 10px;
+    width: 80%;
+}
+.footer-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+footer hr{
+    color:var(--color-footer);
+    width: 100%;
+}
+.footer-section{
+    width: 33%;
+}
+footer a{
+    color: var(--color-footer);
+    text-decoration: none;
+    font-size: 18px;
+}
+.footer-contacto{
+    font-size: large;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: var(--color-footer);
+}
+
+.footer-contacto p{
+    margin:0;
+    margin-left: 10px;
+}
+/* ==========================================
+   7. UTILIDADES
+========================================== */
+.contenedor{
+    align-items: center;
+    justify-content: center;
+    width: min(80%,1200px);
+    margin: auto;    
+}
+.fila{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.columna{
+    display: flex;
+    flex-direction: column;
+}
+.sa{
+    justify-content: space-between;
+}
+.centrado{
+    justify-content: center;
+    align-items:center ;
+}
+.fondo-beis-oscuro{
+    background-color: #f4e9da ;
+}
+.fondo-negro{
+    background-color: rgb(37, 26, 26);
+}
+.fondo-blanco{
+    background-color: white;
+}
+.letra-blanca{
+    color:white;
+}
+.letra-naranja{
+    color:var(--color-naranja);
+}
+.letra-gris{
+    color:#676767;
+}
+.letra-roja{
+    color: red;
+}
+.letra-pequeña{
+    font-size: 7px;
+}
+.separador-gris{
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+
+/* ==========================================
+   8. IMAGENES
+========================================== */
+.imagen-servicio{
+    margin-top: 20px;
+    width: 100%;
+    gap:20px;
+    flex-wrap: wrap;
+
+}
+.imagen-servicio img{
+    width: 100%;
+    max-width: 200px;
+    border-radius: 20px;;
+}
+.imagen-lateral img{
+    width: 100%;
+    border-radius: 15px;
+}
+.imagen-lateral img:hover imagen-servicio img:hover {
+    box-shadow:  var(--sombra);
+}
+
+
+
+
+.icono{
+    width: 30px;
+}
+
+/* ==========================================
+   9. PÁGINAS ESPECÍFICAS
+========================================== */
+
+#viviendas{
+    width: 100%;
+    max-width: 1000px;
+}
+#proceso{
+    background-image: url("./fotos/cocinas/cocina7.png");
+}
+#proceso p{
+    font-size: 16px;
+    color: #333;
+}
+#presupuesto{
+    background-image: url("./fotos/cocinas/cocina3.png");
+}
+#contacto-cocina{
+    padding: 70px;
+    margin-right: 100px;
+    border-radius: 10%;
+}
+
+.banda{
+    padding:0;
+}
+.banda article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+}
+.banda h2{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.banda p{
+    color: grey;
+    margin-top: 2px;
+}
+
+#precios h3{
+    font-family: "Merriweather", serif;
+    font-size: 85px;
+    margin: 0;
+}
+#precios h4{
+    margin:0;
+    font-size: 30px;
+}
+#precios h5{
+    margin:0;
+    font-size: 20px;
+}
+#precios p{
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+#precios article{
+    width: 100%;
+    min-width: 800px;
+    position: relative;
+    background-image: url("./fotos/cocinas/cocina8.png");
+    background-position: left;
+    background-size: cover;
+
+}
+#precios a{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    background-color: var(--color-naranja);
+    font-weight: 600;
+}
+#precios a:hover{
+    background-color: #da6a2e;
+}
+.oferta{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 0;
+    margin: 0;
+    color: rgb(216, 47, 47);
+    text-shadow: 0 0 8px rgba(255, 32, 3, 0.5);
+}
+.oferta h2{
+    border: 2px red solid;
+    border-radius: 20px;
+    margin:0;
+    padding: 0;
+}
+.oferta p{
+    font-size: 50px;
+}
+.oferta img{
+    margin: 0;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 250px;
+}
+#precios img{
+    max-width: 450px;
+}
+
+#presupuesto .icono{
+    border: 1px solid rgb(254, 149, 37);
+    border-radius: 10px;
+    background-color: #ff972144;
+}
+#presupuesto h4{
+    font-size: 20px;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+#presupuesto .info p{
+    margin: 0;
+    margin-left: 15px;
+
+    font-size: 15px;
+}
+
+
+.servicio{
+    display: flex;
+    align-items: center;
+    gap: 60px
+}
+.servicio > *{
+    flex:1;
+}
+.informacion{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--color-naranja);
+    font-size: 20px;
+}
+.boton-claro{
+    text-align: center;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(245, 181, 179);
+    padding: 15px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    /* ---------- GENERALES ---------- */
+
+    section{
+        padding:25px 15px;
+    }
+
+    .contenedor{
+        width:95%;
+    }
+
+    h1{
+        font-size:42px;
+    }
+
+    h2{
+        font-size:34px;
+        text-align:center;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    header{
+        min-height:80vh;
+        justify-content:center;
+        text-align:center;
+        background-position:center;
+    }
+
+    header::before{
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 55%,
+            0 75%
+        );
+    }
+
+    #texto-inicio{
+        margin:120px 20px 0;
+        width:auto;
+    }
+
+    /* ---------- NAV ---------- */
+
+    nav{
+        height:auto;
+        padding:10px 0;
+    }
+
+    #contenedor-navegador{
+        position:static;
+        width:95%;
+        flex-direction:column;
+    }
+
+    nav ul{
+        display: none;
+        flex-direction:column;
+        height:auto;
+        padding:0;
+        margin:0;
+        gap:15px;
+
+    }
+    nav ul li{
+        gap:15px;
+        margin: 10px;
+
+
+    }
+    .whatsapp{
+        margin-top: 10px;
+    }
+    .submenu{
+        display: block;
+        position:static;
+        box-shadow: none
+    }
+    #menu.active{
+        display: block;
+    }
+    .nav-mobil.active{
+        border-bottom: 2px #ddd solid;
+    }
+
+    .img-logo{
+        width:150px;
+    }
+    .bocadillo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        width: 55px;
+        height: 55px;
+    
+        background: white;
+        border: none;
+        border-radius: 50%;
+    
+        cursor: pointer;
+    
+        box-shadow: 0 4px 12px rgba(0,0,0,.40);    
+    }
+
+    /* ---------- LAYOUT ---------- */
+
+    .fila{
+        flex-direction:column;
+    }
+
+    article{
+        width:100%;
+        box-sizing:border-box;
+        margin:15px 0;
+        padding:25px;
+    }
+
+    /* ---------- IMÁGENES ---------- */
+
+    .imagen-lateral{
+        width:100%;
+        margin-top:25px;
+    }
+
+    .imagen-lateral img{
+        width:100%;
+    }
+
+    .imagen-servicio{
+        width:100%;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .imagen-servicio img{
+        width:45%;
+    }
+
+    #viviendas{
+        width:100%;
+    }
+
+    /* ---------- PRECIOS ---------- */
+
+    #precios article{
+        min-width:100%;
+        background-position:center;
+    }
+
+    #precios h3{
+        font-size:55px;
+    }
+
+    .oferta{
+        right:0;
+        top:-5px;
+    }
+
+    .oferta h2{
+        font-size:16px;
+        padding:4px 10px;
+    }
+
+    .oferta img{
+        width:120px;
+        top:25px;
+    }
+
+    /* ---------- FORMULARIO ---------- */
+
+    form{
+        width:100%;
+        padding:25px;
+        box-sizing:border-box;
+    }
+
+    form textarea{
+        max-width:100%;
+    }
+
+    #contacto-cocina{
+        margin:0;
+        padding:25px;
+    }
+
+    /* ---------- SERVICIOS ---------- */
+
+    
+    .servicio{
+        flex-direction:column;
+    
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .footer-info{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:30px;
+    }
+
+    .footer-section{
+        width:100%;
+    }
+
+    .sa{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+}
