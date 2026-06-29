@@ -45,7 +45,7 @@ li{
    2. HEADER
 ========================================== */
 header{
-    background-image: url("./fotos/cocinas/cocina9.png");
+    background-image: url("./fotos/cocinas/cocina9.webp");
     background-position: left;
     min-height: 100vh;
     background-size: cover;
@@ -450,14 +450,14 @@ footer a{
     max-width: 1000px;
 }
 #proceso{
-    background-image: url("./fotos/cocinas/cocina7.png");
+    background-image: url("./fotos/cocinas/cocina7.webp");
 }
 #proceso p{
     font-size: 16px;
     color: #333;
 }
 #presupuesto{
-    background-image: url("./fotos/cocinas/cocina3.png");
+    background-image: url("./fotos/cocinas/cocina3.webp");
 }
 #contacto-cocina{
     padding: 70px;
@@ -506,7 +506,7 @@ footer a{
     width: 100%;
     min-width: 800px;
     position: relative;
-    background-image: url("./fotos/cocinas/cocina8.png");
+    background-image: url("./fotos/cocinas/cocina8.webp");
     background-position: left;
     background-size: cover;
 
