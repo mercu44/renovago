@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>RenovaGo</title>
+    <title>Contacto  |  RenovaGo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/fotos/marca/logo.webp">
+    <link rel="apple-touch-icon" href="/fotos/marca/logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -95,7 +97,7 @@
                 </div>
               </div>
             </div>
-            <form class="columna" >
+            <form id="formulario" class="columna" >
                 <h2>Solicita presupuesto gratis</h2>
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
@@ -105,11 +107,22 @@
           
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+
+                <label for="servicio">¿Qué servicio necesitas?</label>
+
+                <select id="servicio" name="servicio" required>
+                    <option value="" selected disabled>Selecciona un servicio</option>
+                    <option value="Reforma de cocina">Reforma de cocina</option>
+                    <option value="Armario empotrado">Armario empotrado</option>
+                    <option value="Construcción de trastero">Construcción de trastero</option>
+                    <option value="Conversión de local en vivienda">Conversión de local en vivienda</option>
+                </select>
+                
           
-                <label for="necesitas">¿Qué necesitas?</label>
-                <textarea type="text" id="necesitas" name="necesitas" placeholder="Cuéntanos brevemente qué tienes planeado..." required></textarea>
+                <label for="mensaje">¿Qué necesitas?</label>
+                <textarea type="text" id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente qué tienes planeado..." required></textarea>
           
-                <button>Enviar Solicitud -></button>
+                <button type="submit">Enviar Solicitud -></button>
           
                 <p>Presupuesto gratuito en 24h · Sin compromiso · Respuesta garantizada</p>
               </form>
@@ -123,7 +136,7 @@
             <a href="index.html">
               <img class="img-logo" src="./fotos/marca/logo.webp" alt="Logo de RenovaGo">
             </a>
-            <p>Reformas de cocina rápidas, asequibles y de calidad en toda España. Tu cocina nueva en una semana, garantizada.</p>
+            <p>Reformas de cocinas, armarios empotrados y trasteros con acabados profesionales.</p>
           </div>
           <div class="footer-section columna">
             <h3>Navegacion</h3>
@@ -138,7 +151,7 @@
               <img class ="icono" src="./fotos/iconos/whatsap-blanco.webp" alt="Whatsapp"><p>WhatsApp</p> 
             </a>
             <a class="footer-contacto " href="tel:+34624767261">
-              <img class="icono" src="./fotos/iconos/icono-telefono.webp" alt="Ubicacion"><p>+34624767261</p>
+              <img class="icono" src="./fotos/iconos/icono-telefono-blanco.webp" alt="Ubicacion"><p>+34624767261</p>
             </a>
           </div>
         </div>
@@ -149,6 +162,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

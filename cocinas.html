@@ -35,8 +35,8 @@
     <meta name="theme-color" content="#111111">
   
     <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.webp">
+    <link rel="icon" href="/fotos/marca/logo.webp">
+    <link rel="apple-touch-icon" href="/fotos/marca/logo.webp">
   
     <!-- Datos estructurados -->
     <script type="application/ld+json">
@@ -303,7 +303,7 @@
         </div>
         
     
-        <form class="columna" >
+        <form id="formulario" class="columna" >
           <h2>Solicita presupuesto gratis</h2>
           <label for="nombre">Nombre</label>
           <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
@@ -313,11 +313,19 @@
     
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+
+          <label for="servicio">¿Qué servicio necesitas?</label>
+
+          <select id="servicio" name="servicio" required>
+              <option value="Reforma de cocina">Reforma de cocina</option>
+              
+          </select>
+          
     
-          <label for="necesitas">¿Qué necesitas?</label>
-          <textarea type="text" id="necesitas" name="necesitas" placeholder="Cuéntanos brevemente qué quieres hacer con tu cocina..." required></textarea>
+          <label for="mensaje">¿Qué necesitas?</label>
+          <textarea type="text" id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente qué tienes planeado..." required></textarea>
     
-          <button>Enviar Solicitud -></button>
+          <button type="submit">Enviar Solicitud -></button>
     
           <p>Presupuesto gratuito en 24h · Sin compromiso · Respuesta garantizada</p>
         </form>
@@ -346,7 +354,7 @@
               <img class ="icono" src="./fotos/iconos/whatsap-blanco.webp" alt="Whatsapp" loading="lazy"><p>WhatsApp</p> 
             </a>
             <a class="footer-contacto " href="tel:+34624767261">
-              <img class="icono" src="./fotos/iconos/icono-telefono.webp" alt="Ubicacion" loading="lazy"><p>+34624767261</p>
+              <img class="icono" src="./fotos/iconos/icono-telefono-blanco.webp" alt="Ubicacion" loading="lazy"><p>+34624767261</p>
             </a>
           </div>
         </div>
@@ -357,6 +365,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

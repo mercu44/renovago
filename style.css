@@ -299,6 +299,22 @@ form button{
     cursor:pointer;
     transition: background-color 0.2 ease;
 }
+form select{
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border:1px solid rgb(255, 230, 203) ;
+    background-color: #fffceb;
+    outline: none;
+}
+form option{
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border:1px solid rgb(255, 230, 203) ;
+    background-color: #fffceb;
+    outline: none;
+}
 form button:hover{
     background-color: rgb(185, 106, 27) ;
 }
